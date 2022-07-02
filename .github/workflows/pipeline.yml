@@ -33,8 +33,8 @@ jobs:
         env: 
           ARTIFACT_REGISTRY: ${{ secrets.ARTIFACT_REGISTRY }}
         run: | 
-          docker build -t ${{ secrets.ARTIFACT_REGISTRY }}/myapp:latest .
-          docker push ${{ secrets.ARTIFACT_REGISTRY }}/myapp:latest  
+          docker build -t ${{ secrets.ARTIFACT_REGISTRY }}/spotback:latest .
+          docker push ${{ secrets.ARTIFACT_REGISTRY }}/spotback:latest  
 
   DeployProd:
     runs-on: ubuntu-latest
