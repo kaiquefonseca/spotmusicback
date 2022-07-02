@@ -1,5 +1,5 @@
  #Use uma Imagem Official do Python
-FROM python:rc-slim
+FROM python:3.9-slim
 
 # Definindo o diretório onde a aplicação será armazenada
 WORKDIR /app
@@ -7,6 +7,8 @@ WORKDIR /app
 # Copiar os arquivos da pasta local para dentro do container
 COPY . /app
 
+# Instalar dependências
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Garante que será iniciado a aplicação.
-CMD run-program gunicorn app:app --bind :$PORT
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
