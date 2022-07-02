@@ -2,11 +2,11 @@ import os
 import pymysql
 from flask import jsonify
 
-db_user = os.environ.get('CLOUD_SQL_USERNAME')
-db_password = os.environ.get('CLOUD_SQL_PASSWORD')
-db_name = os.environ.get('CLOUD_SQL_DATABASE_NAME')
+db_user = os.environ.get('ROOT')
+db_password = os.environ.get('')
+db_name = os.environ.get('SPOTMUSICDB')
 db_local_host = os.environ.get('DB_LOCAL_HOST')
-db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
+db_connection_name = os.environ.get('hackathon-7aso-grupo-01:us-central1:spotmusicdb')
 
 def open_connection():
     try:
