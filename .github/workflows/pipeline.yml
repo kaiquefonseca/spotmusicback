@@ -56,7 +56,7 @@ jobs:
         uses: 'google-github-actions/deploy-cloudrun@v0'
         with:
           service: 'spotback'
-          image: 'http://us-central1-docker.pkg.dev/hackathon-7aso-grupo-01/labhackathon/spotback'
+          image: 'us-central1-docker.pkg.dev/hackathon-7aso-grupo-01/labhackathon/spotback:latest'
 
       - name: Prod Test
         run: 'curl "${{ steps.appengine.outputs.url }}"'      
