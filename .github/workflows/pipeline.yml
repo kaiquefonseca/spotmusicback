@@ -37,6 +37,7 @@ jobs:
           docker push ${{ secrets.ARTIFACT_REGISTRY }}/spotback:latest  
 
   DeployProd:
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
