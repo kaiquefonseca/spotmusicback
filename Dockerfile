@@ -9,4 +9,4 @@ COPY . /app
 
 
 # Garante que será iniciado a aplicação.
-CMD ["run-program", "gunicorn", "app:app"]
+CMD run-program gunicorn app:app --bind :$PORT
