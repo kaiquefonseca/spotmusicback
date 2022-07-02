@@ -54,7 +54,7 @@ jobs:
         id: cloudrun
         env: 
           ARTIFACT_REGISTRY: ${{ secrets.ARTIFACT_REGISTRY }}
-        uses: 'google-github-actions/deploy-cloudrun@v0'
+        uses: google-github-actions/deploy-cloudrun@v0.10.0
         with:
           service: 'spotback'
           image: 'us-central1-docker.pkg.dev/hackathon-7aso-grupo-01/labhackathon/spotback:latest'
