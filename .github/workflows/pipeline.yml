@@ -1,5 +1,5 @@
 # Nome do Workflow
-name: Sport Music Back Pipeline
+name: Spotmusic Back Pipeline
 
 # Evento que irá acionar a pipeline
 on: 
@@ -42,18 +42,18 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       
-      - name: Auth GCP AppEngine
+      - name: Auth GCP
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
 
-      - name: Deploy to App Engine
-        id: appengine
+      - name: Deploy to Cloud run
+        id: cloudrun
         env: 
           ARTIFACT_REGISTRY: ${{ secrets.ARTIFACT_REGISTRY }}
-        uses: 'google-github-actions/deploy-appengine@v0'
+        uses: google-github-actions/deploy-cloudrun@v0.4.0
         with:
           image_url: ${{ secrets.ARTIFACT_REGISTRY }}/myapp:latest
 
