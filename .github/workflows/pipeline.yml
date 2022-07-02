@@ -55,7 +55,7 @@ jobs:
           ARTIFACT_REGISTRY: ${{ secrets.ARTIFACT_REGISTRY }}
         uses: google-github-actions/deploy-cloudrun@v0.4.0
         with:
-          image_url: ${{ secrets.ARTIFACT_REGISTRY }}/myapp:latest
+          image_url: us-central1-docker.pkg.dev/hackathon-7aso-grupo-01/labhackathon/spotback/myapp:latest
 
       - name: Prod Test
         run: 'curl "${{ steps.appengine.outputs.url }}"'      
